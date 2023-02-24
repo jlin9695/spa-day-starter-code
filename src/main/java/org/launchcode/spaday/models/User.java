@@ -1,14 +1,27 @@
 package org.launchcode.spaday.models;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 public class User {
+    private static int nextId = 1001;
+    private int id;
+
+    @NotBlank(message = "Username is required.")
     private String username;
+
+    @Email
     private String email;
+
+    @NotBlank(message = "password cannot be blank.")
+    @Size(min = 6)
     private String password;
 
-    public User() {
-
+    public User(){
+        this.id = nextId;
+        nextId++;
     }
-
     public User(String username, String email, String password) {
         this();
         this.username = username;

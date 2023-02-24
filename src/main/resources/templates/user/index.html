@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+</head>
+<body>
+    <h1 th:text="'Welcome ' + ${user.getUsername} + '!'">sample text</h1>
+</body>
+</html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th = "http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
